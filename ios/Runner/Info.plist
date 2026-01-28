@@ -45,5 +45,30 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+	
+	<!-- Add these keys for WebSocket and HTTP connections -->
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<!-- Allow insecure HTTP connections (for local development) -->
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+		<!-- Allow WebSocket connections -->
+		<key>NSAllowsArbitraryLoadsInWebContent</key>
+		<true/>
+		<!-- Allow local network connections -->
+		<key>NSAllowsLocalNetworking</key>
+		<true/>
+	</dict>
+	
+	<!-- Optional: Add background modes if needed for persistent connections -->
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>fetch</string>
+		<string>remote-notification</string>
+	</array>
+	
+	<!-- Optional: Prevent screen from sleeping during active connections -->
+	<key>UIRequiresFullScreen</key>
+	<false/>
 </dict>
 </plist>
